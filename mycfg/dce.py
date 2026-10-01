@@ -1,9 +1,4 @@
-import json	# To read input in JSON format
-import sys	# To read input from standard input(stdin)
-
-def dead_code_elimination():
-
-	prog = json.load(sys.stdin)     # Read the JSON program from standard input
+def dead_code_elimination(prog):
 
 	# Run repeatedly until no more instructions are removed
 	while True:
@@ -86,9 +81,4 @@ def dead_code_elimination():
 		if not changed:
 			break
 
-# -------- Write output to file --------
-	with open("output.json", "w") as f:
-		json.dump(prog, f, indent=2)
-
-if __name__ == '__main__':	
-	dead_code_elimination()
+	return prog
