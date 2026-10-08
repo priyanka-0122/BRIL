@@ -58,7 +58,7 @@ def dead_code_elimination(prog):
 #		print("Labels defined:", label_to_line)
 
 # -------- Second pass: remove unused instructions --------
-			for func in prog['functions']:
+		for func in prog['functions']:
 
 				new_instrs = []
 				for instr in func['instrs']:
@@ -68,7 +68,7 @@ def dead_code_elimination(prog):
 
 						# Remove unused labels
 						if 'label' in instr:
-							if instr['label'] not in used_labels and instr['label'] != first_label:
+							if instr['label'] not in used_labels:
 								continue
 
 						new_instrs.append(instr)
